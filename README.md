@@ -1,2 +1,5 @@
 # php-apache
-Base PHP Apache
+
+**eggspot/php:7.3.22-apache**: pre-install all common extensions image for PHP-Apache, could run any PHP.
+
+**eggspot/php:7.3.22-apache-wordpress**: pre-install extensions  Wordpress.
