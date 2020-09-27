@@ -16,8 +16,9 @@ RUN apt-get update \
     && apt-get -y autoremove \
     && apt-get -y clean
 
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/lib --with-png-dir=/usr/lib --with-jpeg-dir=/usr/lib \
-    && docker-php-ext-install mysqli pdo_mysql gd imagick mcrypt exif zip bz2
+COPY .php/install-php-extensions /usr/bin/install-php-extensions
+RUN chmod uga+x /usr/bin/install-php-extensions
+RUN install-php-extensions mysqli pdo_mysql gd imagick mcrypt exif zip bz2
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
