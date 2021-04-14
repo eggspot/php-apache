@@ -6,4 +6,4 @@
 
 **eggspot/php:7.4.12-apache-wordpress**: pre-install extensions  Wordpress. `mysqli pdo_mysql gd imagick mcrypt exif zip bz2`
 
-**eggspot/php:7.4.16-apache-wordpress.Dockerfile**: pre-install extensions  Wordpress `mysqli pdo_mysql gd imagick mcrypt exif zip bz2 redis`
+**eggspot/php:7.4.16-apache-wordpress**: pre-install extensions  Wordpress `mysqli pdo_mysql gd imagick mcrypt exif zip bz2 redis`
