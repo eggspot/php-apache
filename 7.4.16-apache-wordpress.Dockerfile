@@ -16,7 +16,7 @@ RUN apt-get update \
     && apt-get -y autoremove \
     && apt-get -y clean
 
-RUN RUN pecl install redis    
+RUN pecl install redis    
 
 COPY .php/install-php-extensions /usr/bin/install-php-extensions
 RUN chmod uga+x /usr/bin/install-php-extensions
