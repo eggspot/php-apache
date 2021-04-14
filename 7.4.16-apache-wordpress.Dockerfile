@@ -18,8 +18,7 @@ RUN apt-get update \
 
 COPY .php/install-php-extensions /usr/bin/install-php-extensions
 RUN chmod uga+x /usr/bin/install-php-extensions
-RUN install-php-extensions mysqli pdo_mysql gd imagick mcrypt exif zip bz2
-RUN pecl install redis
+RUN install-php-extensions mysqli pdo_mysql gd imagick mcrypt exif zip bz2 redis
 
 # Install Composer
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
