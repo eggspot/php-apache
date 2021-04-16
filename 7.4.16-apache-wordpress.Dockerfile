@@ -25,6 +25,6 @@ RUN pecl install redis
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php -r "copy('https://composer.github.io/installer.sig', 'composer-setup.sig');"
 RUN php -r "if (hash_file('SHA384', 'composer-setup.php') === trim(file_get_contents('composer-setup.sig'))) { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=1.10.13
+RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=2.0.12
 RUN php -r "unlink('composer-setup.php');"
 RUN php -r "unlink('composer-setup.sig');"
