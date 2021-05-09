@@ -49,7 +49,7 @@ RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl && \
     docker-php-ext-install imap && \
     docker-php-ext-enable imap 
 
-RUN docker-php-ext-configure gd --with-freetype=/usr/lib --with-png=/usr/lib --with-jpeg=/usr/lib \
+RUN docker-php-ext-configure gd --with-freetype=/usr/lib --with-jpeg=/usr/lib \
     && docker-php-ext-install gd \
     && docker-php-ext-configure opcache --enable-opcache \
     && docker-php-ext-install intl mbstring mysqli curl pdo_mysql zip opcache bcmath gd \
