@@ -34,6 +34,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     libaprutil1-dev \
     libicu-dev \
     libfreetype6-dev \
+    libonig-dev \
     unzip \
     nano \
     zip \
@@ -48,7 +49,7 @@ RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl && \
     docker-php-ext-install imap && \
     docker-php-ext-enable imap 
 
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr/lib --with-png-dir=/usr/lib --with-jpeg-dir=/usr/lib \
+RUN docker-php-ext-configure gd --with-freetype=/usr/lib --with-png=/usr/lib --with-jpeg=/usr/lib \
     && docker-php-ext-install  gd \
     && docker-php-ext-configure opcache --enable-opcache \
     && docker-php-ext-install intl mbstring mysqli curl pdo_mysql zip opcache bcmath gd \
