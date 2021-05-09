@@ -1,5 +1,7 @@
 # php-apache
 
+**eggspot/php:1.10.13-composer**: pre-install all common extensions image for composer (PHP7), could run any PHP.
+
 **eggspot/php:7.3.22-apache**: pre-install all common extensions image for PHP-Apache, could run any PHP.
 
 **eggspot/php:7.4.19-apache**: pre-install all common extensions image for PHP-Apache, could run any PHP.
