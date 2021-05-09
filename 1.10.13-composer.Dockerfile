@@ -1,48 +1,26 @@
 FROM composer:1.10.13
 
 # Install PHP extensions
-RUN apk update && apk install --no-install-recommends -y \
+RUN apk update && apk add --no-cache \
     ca-certificates \
-    build-essential  \
-    software-properties-common \
-    cron \
     git \
     htop \
     wget \
     dos2unix \
     curl \
-    libcurl4-gnutls-dev \
     sudo \
-    libc-client-dev \
-    libkrb5-dev \
     libmcrypt-dev \
-    libssl-dev \
     libxml2-dev \
     libzip-dev \
-    libjpeg-dev \
-    libmagickwand-dev \
     libpng-dev \
-    libgif-dev \
-    libtiff-dev \
-    libz-dev \
-    libpq-dev \
     imagemagick \
     graphicsmagick \
     libwebp-dev \
-    libjpeg62-turbo-dev \
     libxpm-dev \
-    libaprutil1-dev \
-    libicu-dev \
-    libfreetype6-dev \
     unzip \
     nano \
     zip \
-    mariadb-client \
-    default-mysql-client \
-    mycli \
-    && apk purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
-    && rm -rf /var/lib/apt/lists/* \
-    && rm /etc/cron.daily/*
+    && rm -rf /var/cache/apk/*
 
 RUN docker-php-ext-configure imap --with-kerberos --with-imap-ssl && \
     docker-php-ext-install imap && \
