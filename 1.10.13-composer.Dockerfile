@@ -1,7 +1,7 @@
-FROM php:composer:1.10.13
+FROM composer:1.10.13
 
 # Install PHP extensions
-RUN apt-get update && apt-get install --no-install-recommends -y \
+RUN apk update && apk install --no-install-recommends -y \
     ca-certificates \
     build-essential  \
     software-properties-common \
@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     mariadb-client \
     default-mysql-client \
     mycli \
-    && apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+    && apk purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
     && rm -rf /var/lib/apt/lists/* \
     && rm /etc/cron.daily/*
 
