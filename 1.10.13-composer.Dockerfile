@@ -1,5 +1,7 @@
 FROM php:7.4.19
 
+WORKDIR /app
+
 # Install PHP extensions
 RUN apt-get update && apt-get install --no-install-recommends -y \
     ca-certificates \
@@ -62,5 +64,3 @@ RUN php -r "if (hash_file('SHA384', 'composer-setup.php') === trim(file_get_cont
 RUN php composer-setup.php --install-dir=/usr/local/bin --filename=composer --version=1.10.13
 RUN php -r "unlink('composer-setup.php');"
 RUN php -r "unlink('composer-setup.sig');"
-
- CMD ["composer"]
